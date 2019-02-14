@@ -126,6 +126,8 @@ std::string readFromPipe(int pipe_fd[2]){
 //@param line       the data to write to the PARENT_TO_CHILD pipe
 //@param fileName   prefix to file name to be written to
 void parentProcess(const pid_t &pid, int pipe_fd[2][2], std::string line, const std::string &fileName){
+
+    //Check if this is the parent process
     if(pid > 0){
         writeToPipe(pipe_fd[PARENT_TO_CHILD], const_cast<char *>(line.c_str()), line.length()+1);
         std::string msg = readFromPipe(pipe_fd[CHILD_TO_PARENT]);

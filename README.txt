@@ -2,7 +2,7 @@ I use g++ to compile the program
 I've provided a bash shell script to quickly compile, run, and show all relevant files
 
 Usage:
-./run.sh <name>
+bash run.sh <name>
 
 If it fails to work for some reason
 you can call make and then ./run <name>
